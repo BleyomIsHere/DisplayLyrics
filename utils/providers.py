@@ -39,14 +39,14 @@ def provider_lrclib(info):
     )
 
     headers = {
-        "User-Agent": "DisplayLyrics/1.0 (https://github.com/BleyomIsHere/DisplayLyrics)"
+        "User-Agent": "YeLyrics/1.0 (https://github.com/Bleyom/YeStreamArchive)"
     }
 
     response = requests.get(url, headers=headers)
     if response.status_code == 200:
         data = response.json()
         if data.get("syncedLyrics"):
-            print("[LRCLIB] Synced Lyrics found.")
+            print("[LRCLIB] Letras sincronizadas encontradas.")
             parsed = parse_lrc(data["syncedLyrics"])
             return {
                 "provider": "lrclib",
@@ -55,7 +55,7 @@ def provider_lrclib(info):
                 "status": "found"
             }
         elif data.get("plainLyrics"):
-            print("[LRCLIB] Synced lyrics not found.")
+            print("[LRCLIB] Letras no sincronizadas encontradas.")
             return {
                 "provider": "lrclib",
                 "synced": False,
@@ -63,7 +63,7 @@ def provider_lrclib(info):
                 "status": "not_found"
             }
 
-    print(f"[LRCLIB] Lyrics not found (status {response.status_code}).")
+    print(f"[LRCLIB] No se encontraron letras (status {response.status_code}).")
     return {
         "provider": "lrclib",
         "synced": False,

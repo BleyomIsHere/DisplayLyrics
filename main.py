@@ -13,8 +13,13 @@ from utils.stats import MusicStats, StatsWindow
 from utils.font_manager import FontManager
 from utils.i18n import Translator
 
-# Cargar configuración de entorno e idioma
-load_dotenv()
+def load_environment():
+    base_path = getattr(sys, '_MEIPASS', os.path.abspath("."))
+    env_path = os.path.join(base_path, ".env")
+    if os.path.exists(env_path):
+        load_dotenv(env_path)
+
+load_environment()
 lang_code = os.getenv("APP_LANG", "en")
 t = Translator(lang_code).t
 
@@ -86,9 +91,9 @@ class LyricsDisplayApp:
         self.controls_frame.pack(pady=10)
 
         buttons = [
-            {"emoji": "⏮", "command": self.prev_track},
-            {"emoji": "⏯", "command": self.toggle_play_pause},
-            {"emoji": "⏭", "command": self.next_track},
+            {"emoji": "<", "command": self.prev_track},
+            {"emoji": "|", "command": self.toggle_play_pause},
+            {"emoji": ">", "command": self.next_track},
             {"emoji": "📊", "command": self.show_stats}
         ]
 
