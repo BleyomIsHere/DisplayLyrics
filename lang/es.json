@@ -1,0 +1,22 @@
+{
+  "app_title": "LyricsDisplay",
+
+  "stats_window_title": "📊 Estadísticas",
+  "your_music_stats": "📊 Tus estadísticas musicales",
+  "summary_tab": "📈 Resumen",
+  "tracks_tab": "🎵 Canciones",
+  "artists_tab": "🎤 Artistas",
+  "no_lyrics_found": "No se encontraron lyrics",
+
+  "unique_songs": "🎵 Canciones únicas",
+  "unique_artists": "🎤 Artistas únicos",
+  "total_plays": "▶️ Reproducciones",
+  "total_time": "⏱️ Tiempo total",
+  "favorite_hour": "🕐 Hora favorita",
+  "daily_average": "📅 Promedio diario",
+  "loading": "Cargando...",
+  "less_than_1s": "< 1 seg",
+
+  "track_line": "#{index}  {title} - {artist} · {plays} veces · {total_time}",
+  "artist_line": "#{index}  {artist} · {plays} reproducciones · {unique} canciones · {total_time}"
+}
